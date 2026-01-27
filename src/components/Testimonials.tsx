@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { siteConfig } from "@/config/site";
+import { siteConfig } from "./index";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 

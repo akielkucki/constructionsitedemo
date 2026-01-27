@@ -7,3 +7,4 @@ export { Stats } from "./Stats";
 export { Testimonials } from "./Testimonials";
 export { CTA } from "./CTA";
 export { Footer } from "./Footer";
+export {siteConfig} from "../config/neudeckerconstruction.site";

@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { siteConfig } from "@/config/site";
+import { siteConfig } from "./index";
+
 
 export function CTA() {
   return (
