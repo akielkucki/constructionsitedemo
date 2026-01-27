@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "./index";
+import Image from "next/image";
 
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -123,11 +124,13 @@ export function Projects() {
                 }}
               >
                 <div className="aspect-[4/3] bg-[#1a1a1a] relative">
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/40 to-transparent"
-                    initial={{ opacity: 0.6 }}
-                    whileHover={{ opacity: 0.85 }}
-                    transition={{ duration: 0.3 }}
+                  <Image
+                    className="absolute inset-0 brightness-75"
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    priority
                   />
 
                   <div className="absolute inset-0 bg-grid-pattern opacity-10" />
@@ -152,17 +155,17 @@ export function Projects() {
                         <span className="px-3 py-1 bg-[#c9a227] text-[#1a1a1a] text-xs uppercase tracking-[0.1em] font-medium">
                           {project.category}
                         </span>
-                        <span className="text-[#9a9a9a] text-sm">
+                        <span className="text-muted text-sm">
                           {project.year}
                         </span>
                       </div>
 
-                      <h3 className="text-2xl lg:text-3xl font-semibold text-[#f5f5f5] group-hover:text-[#c9a227] transition-colors duration-300">
+                      <h3 className="text-2xl lg:text-3xl font-semibold text-[#f5f5f5] group-hover:text-[#FFD216] transition-colors duration-300">
                         {project.title}
                       </h3>
 
                       <motion.p
-                        className="mt-3 text-[#9a9a9a]"
+                        className="mt-3 text-muted"
                         initial={{ opacity: 0, y: 10 }}
                         whileHover={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3 }}
@@ -171,8 +174,8 @@ export function Projects() {
                       </motion.p>
 
                       <motion.a
-                        href="#contact"
-                        className="inline-flex items-center gap-2 mt-4 text-sm uppercase tracking-[0.1em] text-[#c9a227]"
+                        href={`/projects/${project.slug}`}
+                        className="inline-flex items-center gap-2 mt-4 text-sm uppercase tracking-[0.1em] text-[#FFD216]"
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1, x: 5 }}
                         transition={{ duration: 0.3 }}
@@ -209,7 +212,7 @@ export function Projects() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <motion.a
-            href="#contact"
+            href="/projects"
             className="btn-secondary"
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}

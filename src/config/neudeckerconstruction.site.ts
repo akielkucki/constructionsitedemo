@@ -34,7 +34,7 @@ export const siteConfig = {
   navigation: [
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
-    { label: "Projects", href: "#projects" },
+    { label: "Projects", href: "/projects" },
     { label: "Testimonials", href: "#testimonials" },
     { label: "Contact", href: "#contact" },
   ],
@@ -90,35 +90,63 @@ export const siteConfig = {
   projects: [
     {
       title: "Basement Renovation",
+      slug: "basement-renovation-warrington-pa",
       category: "Residential",
+      city: "Warrington",
+      state: "PA",
       description:
           "Complete basement finishing with custom design and modern amenities.",
-      image: "/projects/basement-renovation.jpg",
+      fullDescription:
+          "This comprehensive basement renovation transformed an underutilized space into a fully functional living area. The project included custom built-ins, modern lighting design, luxury vinyl plank flooring, and a dedicated entertainment zone. Our team worked closely with the homeowners to create a space that perfectly suits their family's lifestyle.",
+      image: "/portfolio/basement.jpg",
+      gallery: ["/projects/basement-renovation.jpg", "/projects/basement-renovation-2.jpg", "/projects/basement-renovation-3.jpg"],
       year: 2024,
+      features: ["Custom Built-ins", "Modern Lighting", "Entertainment Area", "Full Bathroom"],
     },
     {
       title: "Kitchen Remodel",
+      slug: "kitchen-remodel-doylestown-pa",
       category: "Residential",
+      city: "Doylestown",
+      state: "PA",
       description:
           "Full kitchen transformation with premium finishes and functional layout.",
-      image: "/projects/kitchen-remodel.jpg",
+      fullDescription:
+          "A complete kitchen transformation featuring custom cabinetry, quartz countertops, and high-end stainless steel appliances. The open-concept design maximizes space and natural light while providing ample storage and workspace for the avid home chef.",
+      image: "/portfolio/silverlake.png",
+      gallery: ["/projects/kitchen-remodel.jpg", "/projects/kitchen-remodel-2.jpg", "/projects/kitchen-remodel-3.jpg"],
       year: 2024,
+      features: ["Custom Cabinetry", "Quartz Countertops", "Stainless Appliances", "Open Concept"],
     },
     {
       title: "Bathroom Renovation",
+      slug: "bathroom-renovation-lansdale-pa",
       category: "Residential",
+      city: "Lansdale",
+      state: "PA",
       description:
           "Luxury bathroom remodel featuring custom tile work and modern fixtures.",
-      image: "/projects/bathroom-remodel.jpg",
+      fullDescription:
+          "This luxury master bathroom renovation features floor-to-ceiling custom tile work, a walk-in frameless glass shower, freestanding soaking tub, and dual vanities with quartz countertops. Heated floors and a modern lighting scheme complete the spa-like atmosphere.",
+      image: "/portfolio/pasadena.jpg",
+      gallery: ["/projects/bathroom-remodel.jpg", "/projects/bathroom-remodel-2.jpg", "/projects/bathroom-remodel-3.jpg"],
       year: 2023,
+      features: ["Custom Tile Work", "Walk-in Shower", "Heated Floors", "Dual Vanities"],
     },
     {
       title: "Custom Deck Construction",
+      slug: "custom-deck-construction-chalfont-pa",
       category: "Outdoor",
+      city: "Chalfont",
+      state: "PA",
       description:
           "Beautiful deck addition designed for outdoor entertaining and relaxation.",
-      image: "/projects/deck-construction.jpg",
+      fullDescription:
+          "A stunning multi-level composite deck featuring built-in seating, integrated lighting, and a pergola for shade. The design seamlessly connects the indoor and outdoor living spaces, perfect for entertaining guests or enjoying quiet evenings outdoors.",
+      image: "/portfolio/deck.png",
+      gallery: ["/projects/deck-construction.jpg", "/projects/deck-construction-2.jpg", "/projects/deck-construction-3.jpg"],
       year: 2023,
+      features: ["Composite Decking", "Built-in Seating", "LED Lighting", "Custom Pergola"],
     },
   ],
 
