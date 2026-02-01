@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Header, Footer, siteConfig } from "@/components";
 import { BlurFade } from "@/components/magicui";
+import Image from "next/image";
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -116,6 +117,7 @@ export default function ProjectsPage() {
                             whileHover={{ opacity: 0.9 }}
                             transition={{ duration: 0.3 }}
                           />
+                          <Image src={project.image} fill alt={project.title}/>
 
                           {/* Placeholder pattern */}
                           <div className="absolute inset-0 bg-grid-pattern opacity-20" />

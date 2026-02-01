@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { siteConfig } from "./index";
 
@@ -56,6 +57,16 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
+  // Resolve href: prefix anchor links with "/" when not on homepage
+  const resolveHref = (href: string) => {
+    if (href.startsWith("#") && !isHomePage) {
+      return `/${href}`;
+    }
+    return href;
+  };
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50);
@@ -80,7 +91,7 @@ export function Header() {
       >
         <div className="container-custom flex items-center justify-between">
           <motion.a
-            href="#"
+            href="/"
             className="flex items-center gap-3 group"
             aria-label={siteConfig.company.name}
             whileHover={{ scale: 1.02 }}
@@ -111,7 +122,7 @@ export function Header() {
             {siteConfig.navigation.map((item, i) => (
               <motion.a
                 key={item.label}
-                href={item.href}
+                href={resolveHref(item.href)}
                 className="relative text-sm uppercase tracking-[0.1em] text-[#9a9a9a] hover:text-[#f5f5f5] transition-colors duration-300 py-2 group"
                 custom={i}
                 initial="hidden"
@@ -137,7 +148,7 @@ export function Header() {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <motion.a
-              href="#contact"
+              href={resolveHref("#contact")}
               className="btn-primary text-sm"
               whileHover={{ width: "calc(100%+50px)" }}
 
@@ -190,7 +201,7 @@ export function Header() {
           {siteConfig.navigation.map((item, i) => (
             <motion.a
               key={item.label}
-              href={item.href}
+              href={resolveHref(item.href)}
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-lg uppercase tracking-[0.1em] text-[#9a9a9a] hover:text-[#c9a227] transition-colors duration-300 py-2 border-b border-[#333333]"
               custom={i}
@@ -200,7 +211,7 @@ export function Header() {
             </motion.a>
           ))}
           <motion.a
-            href="#contact"
+            href={resolveHref("#contact")}
             className="btn-primary text-center mt-4"
             onClick={() => setIsMobileMenuOpen(false)}
             custom={siteConfig.navigation.length}

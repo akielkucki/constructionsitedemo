@@ -124,8 +124,9 @@ export function Projects() {
                 }}
               >
                 <div className="aspect-[4/3] bg-[#1a1a1a] relative">
+
                   <Image
-                    className="absolute inset-0 brightness-75"
+                    className=""
                     src={project.image}
                     alt={project.title}
                     fill

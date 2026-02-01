@@ -1,12 +1,20 @@
+// Site Configuration - Edit these values to customize the demo site
+// All variables defined here are used across the entire website
+// This config supports both site templates for easy copy/paste during cold calls
+
 export const siteConfig = {
   // Company Information
   company: {
     name: "Neudecker Construction",
     tagline: "A Premier Remodeling Company",
+    fullName: "Neudecker Construction",
     description:
         "Established in 1969, Neudecker Construction is a premier remodeling company serving Bucks County and Montgomery County. We treat every customer like family, and every home like our own.",
     foundedYear: 1969,
     license: "PA007949",
+    yearsExperience: 55,
+    projectsCompleted: 1000,
+    awardsWon: 0,
   },
 
   // Contact Information
@@ -19,6 +27,7 @@ export const siteConfig = {
       state: "PA",
       zip: "18976",
       country: "United States",
+      full: "538 Bradford Avenue, Warrington, PA 18976",
     },
   },
 
@@ -28,6 +37,8 @@ export const siteConfig = {
     instagram: "",
     facebook: "",
     twitter: "",
+    pinterest: "",
+    houzz: "",
   },
 
   // Navigation Links
@@ -70,7 +81,7 @@ export const siteConfig = {
       title: "Kitchen & Bathroom Remodeling",
       description:
           "Complete kitchen and bathroom renovations featuring quality materials and expert craftsmanship.",
-      icon: "refresh",
+      icon: "kitchen",
     },
     {
       title: "Home Additions",
@@ -82,11 +93,39 @@ export const siteConfig = {
       title: "Decks & Porches",
       description:
           "Custom deck and porch construction to enhance your outdoor living experience.",
-      icon: "factory",
+      icon: "commercial",
     },
   ],
 
-  // Featured Projects
+  // Portfolio Projects (simple format for gallery display)
+  portfolio: [
+    {
+      title: "Basement Renovation",
+      category: "Full Renovation",
+      image: "/portfolio/basement.jpg",
+      description: "Complete basement finishing with custom design and modern amenities.",
+    },
+    {
+      title: "Kitchen Remodel",
+      category: "Kitchen",
+      image: "/portfolio/silverlake.png",
+      description: "Full kitchen transformation with premium finishes and functional layout.",
+    },
+    {
+      title: "Bathroom Renovation",
+      category: "Bathroom",
+      image: "/portfolio/pasadena.jpg",
+      description: "Luxury bathroom remodel featuring custom tile work and modern fixtures.",
+    },
+    {
+      title: "Custom Deck Construction",
+      category: "Outdoor",
+      image: "/portfolio/deck.png",
+      description: "Beautiful deck addition designed for outdoor entertaining and relaxation.",
+    },
+  ],
+
+  // Featured Projects (detailed format with slugs for dynamic pages)
   projects: [
     {
       title: "Basement Renovation",
@@ -153,25 +192,31 @@ export const siteConfig = {
   // Testimonials
   testimonials: [
     {
-      quote:
-          "Neudecker Construction exceeded our expectations. Their attention to detail and professionalism made our remodel a seamless experience.",
+      name: "Satisfied Homeowner",
       author: "Satisfied Homeowner",
       role: "Residential Client",
       company: "Bucks County",
+      quote:
+          "Neudecker Construction exceeded our expectations. Their attention to detail and professionalism made our remodel a seamless experience.",
+      rating: 5,
     },
     {
-      quote:
-          "From start to finish, the team communicated every step of the way. Our new basement is exactly what we envisioned.",
+      name: "Happy Customer",
       author: "Happy Customer",
       role: "Basement Renovation Client",
       company: "Montgomery County",
+      quote:
+          "From start to finish, the team communicated every step of the way. Our new basement is exactly what we envisioned.",
+      rating: 5,
     },
     {
-      quote:
-          "They truly treat every home like their own. The quality of workmanship is outstanding.",
+      name: "Repeat Client",
       author: "Repeat Client",
       role: "Kitchen Remodel Client",
       company: "Warrington",
+      quote:
+          "They truly treat every home like their own. The quality of workmanship is outstanding.",
+      rating: 5,
     },
   ],
 
@@ -191,17 +236,21 @@ export const siteConfig = {
   // CTA Section
   cta: {
     headline: "Ready to Start Your Project?",
+    subheadline: "Schedule a consultation and let's bring your vision to life.",
     description:
         "Contact Neudecker Construction today to discuss your remodeling project and receive a personalized consultation.",
     buttonText: "Contact Us",
     buttonHref: "#contact",
+    buttonLink: "#contact",
   },
 
   // Footer
   footer: {
+    tagline: "Treating every customer like family since 1969.",
     description:
         "Neudecker Construction is a Pennsylvania-licensed contractor (PA007949) delivering premier remodeling services throughout Bucks County and Montgomery County since 1969.",
     copyright: `© ${new Date().getFullYear()} Neudecker Construction. All rights reserved.`,
+    certifications: ["Licensed & Insured", "PA License #PA007949"],
   },
 };
 
